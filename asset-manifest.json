@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/test-codebridge/static/css/main.7acaea2f.css",
-    "main.js": "/test-codebridge/static/js/main.5f4cc662.js",
+    "main.js": "/test-codebridge/static/js/main.4921a346.js",
     "static/js/690.c0960d3d.chunk.js": "/test-codebridge/static/js/690.c0960d3d.chunk.js",
-    "static/js/209.530b469c.chunk.js": "/test-codebridge/static/js/209.530b469c.chunk.js",
+    "static/js/966.16ff0cd8.chunk.js": "/test-codebridge/static/js/966.16ff0cd8.chunk.js",
     "static/js/803.43d804c8.chunk.js": "/test-codebridge/static/js/803.43d804c8.chunk.js",
     "index.html": "/test-codebridge/index.html",
     "main.7acaea2f.css.map": "/test-codebridge/static/css/main.7acaea2f.css.map",
-    "main.5f4cc662.js.map": "/test-codebridge/static/js/main.5f4cc662.js.map",
+    "main.4921a346.js.map": "/test-codebridge/static/js/main.4921a346.js.map",
     "690.c0960d3d.chunk.js.map": "/test-codebridge/static/js/690.c0960d3d.chunk.js.map",
-    "209.530b469c.chunk.js.map": "/test-codebridge/static/js/209.530b469c.chunk.js.map",
+    "966.16ff0cd8.chunk.js.map": "/test-codebridge/static/js/966.16ff0cd8.chunk.js.map",
     "803.43d804c8.chunk.js.map": "/test-codebridge/static/js/803.43d804c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.5f4cc662.js"
+    "static/js/main.4921a346.js"
   ]
 }
