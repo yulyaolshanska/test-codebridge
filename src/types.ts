@@ -10,4 +10,4 @@ export type Articles = {
   url: string;
 };
 
-export type NewsList = Articles[];
+export type ArticlesList = Articles[];
