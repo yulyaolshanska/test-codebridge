@@ -1,44 +1,16 @@
-import styled from '@emotion/styled';
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
-  Grid,
   Typography,
 } from '@mui/material';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Articles } from 'types';
+import { ReadMoreButton, StyledGrid } from './CardItem.styled';
 
 const CardItem: React.FC<Props> = () => {
-  const ReadMoreButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    padding: '6px 12px',
-    color: '#363636',
-    lineHeight: 1.5,
-    fontWeight: 700,
-
-    '&:hover': {
-      boxShadow: 'none',
-    },
-    '&:active': {
-      boxShadow: 'none',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    },
-  });
-
-  const StyledGrid = styled(Grid)(({ theme }) => ({
-    // color: theme.palette.text.secondary,
-    // [theme.breakpoints.up('tablet')]: {
-    //   width: '400px',
-    // },
-  }));
   return (
     <StyledGrid
       item
