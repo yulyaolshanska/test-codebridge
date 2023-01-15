@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/690.c0960d3d.chunk.js","mappings":"yIAGA,UAHoB,WAClB,OAAO,wCACR,C","sources":["pages/ArticlePage/ArticlePage.jsx"],"sourcesContent":["const ArticlePage = () => {\n  return <>DDDDDD</>;\n};\nexport default ArticlePage;\n"],"names":[],"sourceRoot":""}
