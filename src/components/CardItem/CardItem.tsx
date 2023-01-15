@@ -8,8 +8,11 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-const CardItem = ({ id }) => {
+import { Articles } from 'types';
+
+const CardItem: React.FC<Props> = () => {
   const ReadMoreButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
@@ -31,17 +34,17 @@ const CardItem = ({ id }) => {
   });
 
   const StyledGrid = styled(Grid)(({ theme }) => ({
-    color: theme.palette.text.secondary,
-    [theme.breakpoints.up('md')]: {
-      width: '400px',
-    },
+    // color: theme.palette.text.secondary,
+    // [theme.breakpoints.up('tablet')]: {
+    //   width: '400px',
+    // },
   }));
   return (
     <StyledGrid
       item
-      component="li"
-      xs={12}
-      sm={4}
+      // component="li"
+      mobile={12}
+      tablet={4}
       // sx={{ marginBottom: '45px', marginRight: '45px' }}
     >
       <Card component="div">
@@ -67,6 +70,10 @@ const CardItem = ({ id }) => {
       </Card>
     </StyledGrid>
   );
+};
+
+type Props = {
+  newsData: Articles;
 };
 
 export default CardItem;

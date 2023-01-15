@@ -1,7 +1,9 @@
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-const FilterField = () => {
+import { Typography } from '@mui/material';
+
+const FilterField: React.FC = () => {
   const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     '&:hover': {
@@ -9,9 +11,10 @@ const FilterField = () => {
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
+    marginBottom: '30px',
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+    [theme.breakpoints.up('tablet')]: {
+      marginBottom: '40px',
       width: 'auto',
     },
   }));
@@ -32,11 +35,11 @@ const FilterField = () => {
     border: '1px solid #EAEAEA',
     boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
     borderRadius: '5px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('tablet')]: {
       width: '100%',
     },
 
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('tablet')]: {
       width: '75ch',
     },
     '& .MuiInputBase-input': {
@@ -48,17 +51,26 @@ const FilterField = () => {
       //   transition: theme.transitions.create('width'),
     },
   }));
+  const Title = styled(Typography)(({ theme }) => ({
+    marginBottom: '10px',
+    fontWeight: 600,
+    lineHeight: '20px',
+    color: '#363636',
+  }));
 
   return (
-    <Search>
-      <SearchIconWrapper>
-        <SearchIcon />
-      </SearchIconWrapper>
-      <StyledInputBase
-        placeholder="Search…"
-        inputProps={{ 'aria-label': 'search' }}
-      />
-    </Search>
+    <>
+      <Title>Filter by keywords</Title>
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase
+          placeholder="Search…"
+          inputProps={{ 'aria-label': 'search' }}
+        />
+      </Search>
+    </>
   );
 };
 export default FilterField;
