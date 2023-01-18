@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Articles } from 'types';
 
 interface Article {
   id: number;

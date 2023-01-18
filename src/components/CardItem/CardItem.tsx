@@ -10,7 +10,6 @@ import {
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-// import { Articles } from 'types';
 import { ReadMoreButton, StyledGrid, Title } from './CardItem.styled';
 import { formatDate } from 'helpers/formDate';
 import { NavLink, useLocation } from 'react-router-dom';
