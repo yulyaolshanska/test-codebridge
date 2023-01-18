@@ -15,7 +15,7 @@ export const App = () => {
         {/* <GlobalStyles /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/article" element={<ArticlePage />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="*" element={<div>Nooooo</div>} />
         </Routes>
         <CssBaseline />

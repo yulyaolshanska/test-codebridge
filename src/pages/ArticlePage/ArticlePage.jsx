@@ -1,4 +1,6 @@
+import Article from 'components/Article/Article';
+
 const ArticlePage = () => {
-  return <>DDDDDD</>;
+  return <Article />;
 };
 export default ArticlePage;
