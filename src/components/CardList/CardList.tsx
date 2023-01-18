@@ -5,7 +5,7 @@ const { Box } = require('@mui/system');
 const { default: CardItem } = require('components/CardItem/CardItem');
 
 const CardList = () => {
-  const { data: articles = [], isLoading } = useGetArticlesQuery('1');
+  const { data: articles = [] } = useGetArticlesQuery('1');
   // console.log('articles', articles);
   return (
     <Box sx={{ flexGrow: 1 }}>

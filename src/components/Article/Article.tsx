@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useGetArticleByIdQuery } from 'redux/articlesApi';
 import {
   BackButton,
