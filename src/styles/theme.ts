@@ -27,6 +27,8 @@ export const themeOptions: ThemeOptions = {
       styleOverrides: `
        body {
   margin: 0;
+  box-sizing: border-box;
+   padding: 0;
 },
 ul,
 ol {
@@ -34,7 +36,7 @@ ol {
   padding: 0;
   margin: 0;
 },
-body,
+
 h1,
 h2,
 h3,
@@ -71,14 +73,14 @@ a {
   },
 };
 
-export const theme = createTheme({
-  // breakpoints: {
-  //   values: {
-  //     xs: 0,
-  //     sm: 600,
-  //     md: 900,
-  //     lg: 1200,
-  //     xl: 1536,
-  //   },
-  // },
-});
+// export const theme = createTheme({
+// breakpoints: {
+//   values: {
+//     xs: 0,
+//     sm: 600,
+//     md: 900,
+//     lg: 1200,
+//     xl: 1536,
+//   },
+// },
+// });
