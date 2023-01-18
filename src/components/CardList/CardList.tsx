@@ -1,8 +1,12 @@
+import { useGetArticlesQuery } from 'redux/articlesApi';
+
 const { Grid } = require('@mui/material');
 const { Box } = require('@mui/system');
 const { default: CardItem } = require('components/CardItem/CardItem');
 
 const CardList = () => {
+  const { data: articles = [], isLoading } = useGetArticlesQuery('1');
+  // console.log('articles', articles);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -12,8 +16,15 @@ const CardList = () => {
         component="ul"
         justifyContent="center"
       >
-        {Array.from(Array(6)).map((_, index) => (
-          <CardItem key={index} />
+        {articles.map(({ id, title, summary, imageUrl, updatedAt }) => (
+          <CardItem
+            key={id}
+            title={title}
+            summary={summary}
+            imageUrl={imageUrl}
+            publishedAt={updatedAt}
+            id={id}
+          />
         ))}
       </Grid>
     </Box>
