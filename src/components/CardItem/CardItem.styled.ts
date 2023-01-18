@@ -1,5 +1,15 @@
-import styled from '@emotion/styled';
-import { Button, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Button, Grid, Typography } from '@mui/material';
+
+export const Title = styled(Typography)(({ theme }) => ({
+  fontSize: '24px',
+  lineHeight: '29px',
+  marginBottom: '15px',
+  color: '#363636',
+  [theme.breakpoints.up('tablet')]: {
+    marginBottom: '20px',
+  },
+}));
 
 export const ReadMoreButton = styled(Button)({
   boxShadow: 'none',
@@ -23,7 +33,8 @@ export const ReadMoreButton = styled(Button)({
 
 export const StyledGrid = styled(Grid)(({ theme }) => ({
   // color: theme.palette.text.secondary,
-  // [theme.breakpoints.up('tablet')]: {
-  //   width: '400px',
-  // },
+  [theme.breakpoints.up('tablet')]: {
+    width: '400px',
+    // height: '530px',
+  },
 }));

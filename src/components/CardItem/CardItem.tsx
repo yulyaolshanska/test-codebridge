@@ -1,3 +1,5 @@
+import Highlighter from 'react-highlight-words';
+
 import {
   Card,
   CardActions,
@@ -5,12 +7,34 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Articles } from 'types';
-import { ReadMoreButton, StyledGrid } from './CardItem.styled';
+// import { Articles } from 'types';
+import { ReadMoreButton, StyledGrid, Title } from './CardItem.styled';
+import { formatDate } from 'helpers/formDate';
+import { NavLink, useLocation } from 'react-router-dom';
 
-const CardItem: React.FC<Props> = () => {
+interface ArticleCardProps {
+  id: number;
+  title: string;
+  summary: string;
+  imageUrl: string;
+  publishedAt: string;
+}
+
+const CardItem: React.FC<ArticleCardProps> = ({
+  title,
+  summary,
+  imageUrl,
+  publishedAt,
+  id,
+}) => {
+  const location = useLocation();
+  const description =
+    summary.length > 100 ? summary.substring(0, 100) + '...' : summary;
+  const titleSbstr =
+    title.length > 60 ? title.substring(0, 60) + '...' : title + '.';
   return (
     <StyledGrid
       item
@@ -19,33 +43,38 @@ const CardItem: React.FC<Props> = () => {
       tablet={4}
       // sx={{ marginBottom: '45px', marginRight: '45px' }}
     >
-      <Card component="div">
-        <CardMedia
-          sx={{ height: 140 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
+      <Card sx={{ height: 530 }} component="div">
+        <CardMedia sx={{ height: 217 }} image={imageUrl} title="title" />
         <CardContent>
-          <Typography gutterBottom variant="subtitle1" component="p">
-            Lizard
+          <Typography>
+            <CalendarTodayIcon />
+            {formatDate(new Date(publishedAt))}
           </Typography>
+          <Title variant="subtitle1">
+            <Highlighter
+              searchWords={['and', 'like']}
+              autoEscape={true}
+              textToHighlight={titleSbstr}
+            ></Highlighter>
+          </Title>
           <Typography color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            <Highlighter
+              searchWords={['and', 'like']}
+              autoEscape={true}
+              textToHighlight={description}
+            ></Highlighter>
           </Typography>
         </CardContent>
         <CardActions>
           <ReadMoreButton size="small" endIcon={<ArrowForwardIcon />}>
-            Read More
+            <NavLink to={`/article/${id}`} state={{ from: location }}>
+              Read More
+            </NavLink>
           </ReadMoreButton>
         </CardActions>
       </Card>
     </StyledGrid>
   );
-};
-
-type Props = {
-  newsData: Articles;
 };
 
 export default CardItem;
