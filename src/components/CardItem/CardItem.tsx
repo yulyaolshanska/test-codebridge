@@ -1,3 +1,4 @@
+import React from 'react';
 import Highlighter from 'react-highlight-words';
 import { CardActions, CardContent, CardMedia, Grid } from '@mui/material';
 

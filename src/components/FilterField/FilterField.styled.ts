@@ -49,8 +49,8 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
   },
 }));
-export const Title = styled(Typography)(({ theme }) => ({
+export const Title = styled(Typography)({
   marginBottom: '10px',
   fontWeight: 600,
   lineHeight: '1.25',
-}));
+});

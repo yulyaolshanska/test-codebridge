@@ -1,3 +1,4 @@
+import React from 'react';
 import { useGetArticlesQuery } from 'redux/articlesApi';
 import { useAppSelector } from 'redux/store';
 import { Grid, Typography } from '@mui/material';

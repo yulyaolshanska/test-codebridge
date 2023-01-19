@@ -2,6 +2,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { createTheme, CssBaseline } from '@mui/material';
 import { themeOptions } from '../styles/theme';
 import { lazy, Suspense } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loader from './Loader/Loader';
 
