@@ -51,7 +51,10 @@ export const ReadMoreButton = styled(Button)({
 });
 
 export const StyledCard = styled(Card)(({ theme }) => ({
-  height: '500px',
+  height: '560px',
+  [theme.breakpoints.up('tablet')]: {
+    height: '500px',
+  },
   [theme.breakpoints.up('desktop')]: {
     height: '560px',
   },
