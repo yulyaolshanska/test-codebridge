@@ -21,6 +21,9 @@ export const themeOptions: ThemeOptions = {
       desktop: 1200,
     },
   },
+  typography: {
+    fontFamily: 'Montserrat',
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
@@ -28,6 +31,9 @@ export const themeOptions: ThemeOptions = {
   margin: 0;
   box-sizing: border-box;
    padding: 0;
+   font-family: "Montserrat";
+   color: #363636;
+   font-size: 16px;
 },
 ul,
 ol {
@@ -63,11 +69,6 @@ a {
   display: block;
 }
       `,
-    },
-  },
-  typography: {
-    subtitle1: {
-      fontSize: 24,
     },
   },
 };

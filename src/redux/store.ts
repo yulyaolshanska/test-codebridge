@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import {
   FLUSH,
   PAUSE,
@@ -8,10 +9,12 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import { articlesApi } from './articlesApi';
+import { SearchSlice } from './searchSlice';
 
 export const store = configureStore({
   reducer: {
     [articlesApi.reducerPath]: articlesApi.reducer,
+    search: SearchSlice.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -22,3 +25,8 @@ export const store = configureStore({
     articlesApi.middleware,
   ],
 });
+
+export const useAppDispatch: () => typeof store.dispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<
+  ReturnType<typeof store.getState>
+> = useSelector;
