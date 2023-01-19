@@ -1,6 +1,6 @@
 import Article from 'components/Article/Article';
 
-const ArticlePage = () => {
+const ArticlePage: React.FC = () => {
   return <Article />;
 };
 export default ArticlePage;

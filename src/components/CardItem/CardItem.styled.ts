@@ -1,11 +1,28 @@
 import { styled } from '@mui/material/styles';
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Card, Typography } from '@mui/material';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+
+export const CalendarIcon = styled(CalendarTodayIcon)({
+  marginRight: '10px',
+});
+
+export const CalendarDate = styled(Typography)(({ theme }) => ({
+  display: 'flex',
+  fontSize: '14px',
+  color: 'rgba(54, 54, 54, 0.6)',
+  marginBottom: '14px',
+  [theme.breakpoints.up('tablet')]: {
+    marginBottom: '20px',
+  },
+  [theme.breakpoints.up('desktop')]: {
+    marginBottom: '24px',
+  },
+}));
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: '24px',
-  lineHeight: '29px',
+  lineHeight: '1.2',
   marginBottom: '15px',
-  color: '#363636',
   [theme.breakpoints.up('tablet')]: {
     marginBottom: '20px',
   },
@@ -31,10 +48,13 @@ export const ReadMoreButton = styled(Button)({
   },
 });
 
-export const StyledGrid = styled(Grid)(({ theme }) => ({
-  // color: theme.palette.text.secondary,
-  [theme.breakpoints.up('tablet')]: {
+export const StyledCard = styled(Card)(({ theme }) => ({
+  height: '500px',
+  [theme.breakpoints.up('desktop')]: {
+    height: '560px',
+  },
+  [theme.breakpoints.up(1440)]: {
     width: '400px',
-    // height: '530px',
+    height: '530px',
   },
 }));

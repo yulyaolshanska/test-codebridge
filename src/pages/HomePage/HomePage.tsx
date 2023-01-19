@@ -1,13 +1,13 @@
-import { Container } from '@mui/material';
 import CardList from 'components/CardList/CardList';
 import FilterField from 'components/FilterField/FilterField';
+import { Box } from './Home.styled';
 
 const Home: React.FC = () => {
   return (
-    <Container sx={{ paddingTop: '50px', paddingBottom: '50px' }}>
+    <Box>
       <FilterField />
       <CardList />
-    </Container>
+    </Box>
   );
 };
 

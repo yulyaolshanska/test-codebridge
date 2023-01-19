@@ -1,18 +1,17 @@
 import Highlighter from 'react-highlight-words';
-
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@mui/material';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import { CardActions, CardContent, CardMedia, Grid } from '@mui/material';
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { ReadMoreButton, StyledGrid, Title } from './CardItem.styled';
+import {
+  CalendarIcon,
+  CalendarDate,
+  ReadMoreButton,
+  StyledCard,
+  Title,
+} from './CardItem.styled';
 import { formatDate } from 'helpers/formDate';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useAppSelector } from 'redux/store';
 
 interface ArticleCardProps {
   id: number;
@@ -34,35 +33,29 @@ const CardItem: React.FC<ArticleCardProps> = ({
     summary.length > 100 ? summary.substring(0, 100) + '...' : summary;
   const titleSbstr =
     title.length > 60 ? title.substring(0, 60) + '...' : title + '.';
+  const filter = useAppSelector(state => state.search.searchQuery);
+
   return (
-    <StyledGrid
-      item
-      // component="li"
-      mobile={12}
-      tablet={4}
-      // sx={{ marginBottom: '45px', marginRight: '45px' }}
-    >
-      <Card sx={{ height: 530 }} component="div">
+    <Grid item component="li" mobile={12} tablet={4} sx={{ width: '400px' }}>
+      <StyledCard>
         <CardMedia sx={{ height: 217 }} image={imageUrl} title="title" />
         <CardContent>
-          <Typography>
-            <CalendarTodayIcon />
+          <CalendarDate>
+            <CalendarIcon />
             {formatDate(new Date(publishedAt))}
-          </Typography>
-          <Title variant="subtitle1">
+          </CalendarDate>
+          <Title>
             <Highlighter
-              searchWords={['and', 'like']}
+              searchWords={[filter]}
               autoEscape={true}
               textToHighlight={titleSbstr}
             ></Highlighter>
           </Title>
-          <Typography color="text.secondary">
-            <Highlighter
-              searchWords={['and', 'like']}
-              autoEscape={true}
-              textToHighlight={description}
-            ></Highlighter>
-          </Typography>
+          <Highlighter
+            searchWords={[filter]}
+            autoEscape={true}
+            textToHighlight={description}
+          ></Highlighter>
         </CardContent>
         <CardActions>
           <ReadMoreButton size="small" endIcon={<ArrowForwardIcon />}>
@@ -71,8 +64,8 @@ const CardItem: React.FC<ArticleCardProps> = ({
             </NavLink>
           </ReadMoreButton>
         </CardActions>
-      </Card>
-    </StyledGrid>
+      </StyledCard>
+    </Grid>
   );
 };
 
