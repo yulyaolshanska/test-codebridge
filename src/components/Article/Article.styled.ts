@@ -3,17 +3,14 @@ import { styled } from '@mui/material/styles';
 import { ReadMoreButton } from 'components/CardItem/CardItem.styled';
 import { NavLink } from 'react-router-dom';
 
-export const StyledBox = styled(Box)(({ theme }) => ({
-  //   position: 'absolute',
-  //   top: '150px',
-
+export const StyledBox = styled(Box)({
   zIndex: 20,
   background: '#FFFFFF',
   border: '1px solid #EAEAEA',
   boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
   padding: '50px 75px',
   borderRadius: '5px',
-}));
+});
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: '24px',
