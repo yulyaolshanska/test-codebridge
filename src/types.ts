@@ -1,4 +1,4 @@
-export type Articles = {
+export type Article = {
   id: number;
   imageUrl: string;
   launches: number[];
@@ -10,4 +10,4 @@ export type Articles = {
   url: string;
 };
 
-export type ArticlesList = Articles[];
+export type ArticlesList = Article[];
