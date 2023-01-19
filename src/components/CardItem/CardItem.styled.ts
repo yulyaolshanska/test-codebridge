@@ -20,11 +20,13 @@ export const CalendarDate = styled(Typography)(({ theme }) => ({
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: '24px',
+  fontSize: '20px',
   lineHeight: '1.2',
   marginBottom: '15px',
+  fontWeight: 700,
   [theme.breakpoints.up('tablet')]: {
     marginBottom: '20px',
+    fontSize: '24px',
   },
 }));
 

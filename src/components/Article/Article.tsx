@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { useLocation, useParams } from 'react-router-dom';
 import { useGetArticleByIdQuery } from 'redux/articlesApi';
 import {
   BackButton,
   StyledBox,
   StyledNavLink,
+  StyledContainer,
   StyledTypography,
   Title,
 } from './Article.styled';
@@ -20,7 +21,7 @@ const Article: React.FC = () => {
   const summary = article?.summary || '';
   return (
     <>
-      <Container sx={{ padding: '150px 75px 50px 75px' }}>
+      <StyledContainer>
         <Box
           sx={{
             zIndex: -1,
@@ -36,7 +37,7 @@ const Article: React.FC = () => {
           }}
         />
 
-        <StyledBox sx={{ paddingX: '75px', paddingY: '50px' }}>
+        <StyledBox>
           <Title>{article?.title}</Title>
           {!isLoading && summary.length < 400 ? (
             <>
@@ -100,7 +101,7 @@ const Article: React.FC = () => {
             Back to homepage
           </StyledNavLink>
         </BackButton>
-      </Container>
+      </StyledContainer>
     </>
   );
 };
