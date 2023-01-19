@@ -2,10 +2,14 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 interface Article {
   id: number;
-  title: string;
-  summary: string;
   imageUrl: string;
+  launches: number[];
+  newsSite: string;
+  publishedAt: string;
+  summary: string;
+  title: string;
   updatedAt: string;
+  url: string;
 }
 type ArticlesResponse = Article[];
 
@@ -18,7 +22,13 @@ export const articlesApi = createApi({
   refetchOnMountOrArgChange: true,
   endpoints: builder => ({
     getArticles: builder.query<ArticlesResponse, string>({
-      query: () => '?_limit=6',
+      query: filter => {
+        const filterQuery =
+          filter === ''
+            ? ''
+            : `&&title_contains=${filter}&&summary_contains=${filter}`;
+        return `?_limit=9${filterQuery}`;
+      },
       providesTags: ['Articles'],
     }),
     getArticleByQuery: builder.query<Article, string>({
